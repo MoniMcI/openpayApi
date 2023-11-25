@@ -48,9 +48,6 @@ module.exports = (sequelize) => {
 
     }, 
         {timestamps: false}
-    );
-
-
-    
+    ); 
     return Cliente;
 };

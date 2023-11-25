@@ -1,6 +1,7 @@
+require('dotenv').config();
 const Openpay = require('openpay');
 const { Cliente } = require('../db');
-require('dotenv').config();
+
 
 const OPENPAY_MERCHANT_ID = process.env.OPENPAY_MERCHANT_ID;
 const OPENPAY_PRIVATE_KEY = process.env.OPENPAY_PRIVATE_KEY;
@@ -18,6 +19,7 @@ const updateCustomerById = async (customerId, updatedData) => {
             console.log('Detalles del error de Openpay:', error.error);
             reject(error);
           } else {
+            console.log('Cliente actualizado en Openpay:', customer);
             resolve(customer);
           }
         });

@@ -28,22 +28,24 @@ const ViewCharges = ({ customerId, onClose }) => {
         {customerCharges.length === 0 ? (
           <p>No hay cargos para mostrar.</p>
         ) : (
-          <Table striped bordered hover>
+          <Table striped bordered hover style={{ width: '80%' }}>
             <thead>
               <tr>
-                <th>ID</th>
+                {/* <th>ID</th> */}
                 <th>Monto</th>
                 <th>Descripción</th>
                 <th>Fecha del Cargo</th>
+                <th>Order_id</th>
               </tr>
             </thead>
             <tbody>
               {customerCharges.map((charge) => (
                 <tr key={charge.id}>
-                  <td>{charge.id}</td>
+                  {/* <td>{charge.id}</td> */}
                   <td>{charge.amount}</td>
                   <td>{charge.description}</td>
                   <td>{charge.operation_date}</td>
+                  <td>{charge.order_id}</td>
                 </tr>
               ))}
             </tbody>

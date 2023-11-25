@@ -120,15 +120,19 @@ const EditCustomer = ({ customer, onUpdateCustomer, onCloseForm }) => {
           </Col>
         </Form.Group>
         <Form.Group as={Row} controlId="formCountryCode">
-          <Form.Label column sm="2">Código de País</Form.Label>
-          <Col sm="10">
-            <Form.Control 
-            type="text" 
-            name="country_code" 
-            value={editedCustomer.address ? editedCustomer.address.country_code : ''} 
-            onChange={handleAddressChange} />
-          </Col>
-        </Form.Group>
+        <Form.Label column sm="2">Código de País</Form.Label>
+        <Col sm="10">
+          <Form.Control
+            as="select"
+            name="country_code"
+            value={editedCustomer.address ? editedCustomer.address.country_code : ''}
+            onChange={handleAddressChange}
+          >
+            <option value="AR">AR</option>
+            <option value="MX">MX</option>
+          </Form.Control>
+        </Col>
+      </Form.Group>
       </Form>
       <Button variant="primary" onClick={handleUpdateCustomer} className="mr-4">
         Guardar Cambios

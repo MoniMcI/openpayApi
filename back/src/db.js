@@ -17,7 +17,13 @@ const sequelize = new Sequelize(process.env.DB_NAME, process.env.DB_USER, proces
   Cliente.hasMany(Cargo, { foreignKey: 'customer_id' });
   Cargo.belongsTo(Cliente, { foreignKey: 'customer_id' });
 
-  sequelize.sync();
+  sequelize.sync()
+  .then(() => {
+    console.log('Tablas sincronizadas correctamente');
+  })
+  .catch(error => {
+    console.error('Error al sincronizar las tablas:', error);
+  });
 
   module.exports = { sequelize, Cliente, Cargo };
 
