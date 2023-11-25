@@ -55,6 +55,8 @@ const Customers = () => {
         if (response.status === 200) {
           setCustomers([...customers, response.data]);
           console.log("response.data", response.data);
+          alert("Cliente agregado con exito");
+          setMostrarFormulario(false);
         } else {
           console.error('Error al agregar el cliente:', response.statusText);
         }
