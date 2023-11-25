@@ -41,7 +41,6 @@ const GenerateCharge = ({ customerId, onClose, onChargeGenerated }) => {
   const validateForm = () => {
     const errors = {};
 
-    // Validaciones específicas, por ejemplo:
     if (chargeRequest.amount <= 0) {
       errors.amount = 'El monto debe ser mayor que cero';
     }
